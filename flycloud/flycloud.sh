@@ -27,8 +27,9 @@ chromedriver_win="https://storage.googleapis.com/chrome-for-testing-public/${chr
 
 
 #代理地址
-proxyURL='http://ghb.jdmk.xyz:1888/'
-proxyURL2='https://mirror.ghproxy.com/'
+proxyURL='http://git.566646.xyz:12333/'
+proxyURL2='http://ghb.mkjt.xyz:1888/'
+
 # 是否使用自定义加速镜像
 echo -e "\n   ${yellow}是否使用自定义加速镜像用于全局加速？(已内置加速镜像)${plain}"
 echo "   1) 国内主机，需要使用"
@@ -37,7 +38,7 @@ echo -ne "\n你的选择："
 read  is_speed
 case $is_speed in
    1) echo "加速模式启用中。。。"
-        echo -e "\n   ${yellow}请输入您的自定义加速镜像（回车使用默认加速镜像），格式如：https://mirror.ghproxy.com/，请注意后面的斜杆/${plain}"
+        echo -e "\n   ${yellow}请输入您的自定义加速镜像（回车使用默认加速镜像），格式如：http://git.566646.xyz:12333/，请注意后面的斜杆/${plain}"
         read  proxyURLTemp
         if  [ ! -n "${proxyURLTemp}" ] ;then
             echo -e "${yellow}使用默认加速镜像：${proxyURL}${plain}"
@@ -323,7 +324,7 @@ check_install() {
     #检测静态文件
     check_statics
     #检测是否下载Chrome浏览器
-    check_chrome
+    #check_chrome
     #检测app.jar
     check_jar
     #检测旧版的jd_cookie是否还在运行，需关闭
@@ -346,7 +347,7 @@ update_soft() {
     #检测是否有静态文件
     check_statics
     #检测是否下载Chrome浏览器
-    check_chrome
+    #check_chrome
     #检测是否安装启动了redis
     check_redis
     #检测是否已经有配置文件
@@ -378,7 +379,7 @@ check_update() {
      #检测是否已经下载静态文件
      check_statics
      #检测是否下载Chrome浏览器
-     check_chrome
+     #check_chrome
      #检测是否安装redis
      check_redis
      #检测是否已经有配置文件
